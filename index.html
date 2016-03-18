@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Azure-search-ios by TheDarkCode</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Azure-search-ios</h1>
+        <p>Modular SDK written in Swift 2 that simplifies incorporating Azure Search into native iOS applications for iPhones and iPads. Requires Whole Module Optimization to be enabled for best performance. Non-commercial use only.</p>
+
+        <p class="view"><a href="https://github.com/TheDarkCode/azure-search-ios">View the Project on GitHub <small>TheDarkCode/azure-search-ios</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/TheDarkCode/azure-search-ios/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/TheDarkCode/azure-search-ios/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/TheDarkCode/azure-search-ios">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1 align="center">
+<a id="azure-search-ios-sdk" class="anchor" href="#azure-search-ios-sdk" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+
+
+Azure Search iOS SDK
+
+</h1>
+
+<p>Modular SDK written in Swift 2 that simplifies incorporating Azure Search into native iOS applications for iPhones and iPads. Requires Whole Module Optimization to be enabled for best performance. <strong>Non-commercial use only.</strong></p>
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/TheDarkCode/azure-search-ios/master/img/AZSSearch.png" alt="AngularAzureSearch" height="auto" width="60%">
+</p>
+
+<h2>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements:</h2>
+
+<h5>
+<a id="xcode-7-latest-update-on-el-capitan-apple-developer-license" class="anchor" href="#xcode-7-latest-update-on-el-capitan-apple-developer-license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>XCode 7 (latest update) on El Capitan. Apple Developer License.</h5>
+
+<p>You should have a basic understanding of working with Swift 2 as well as how to use storyboards and views loaded from xib files. You will need to customize the examples to fit your specific data structures.</p>
+
+<h4>
+<a id="azure-service-requirements-for-deployment" class="anchor" href="#azure-service-requirements-for-deployment" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Azure Service Requirements for Deployment</h4>
+
+<p>You must configure the project with your own Azure Search Keys, and Bing Maps API Keys.</p>
+
+<h6>
+<a id="if-you-are-new-to-azure-you-can-get-a-free-trial-at-the-following-link" class="anchor" href="#if-you-are-new-to-azure-you-can-get-a-free-trial-at-the-following-link" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>If you are new to Azure, you can get a free trial at the following link:</h6>
+
+<p><a href="https://azure.microsoft.com/en-us/pricing/free-trial/">https://azure.microsoft.com/en-us/pricing/free-trial/</a></p>
+
+<h6>
+<a id="bing-maps-api-10k-transactionsmo-for-free" class="anchor" href="#bing-maps-api-10k-transactionsmo-for-free" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Bing Maps API (10k transactions/mo for free)</h6>
+
+<p><a href="http://www.microsoft.com/maps/Licensing/licensing.aspx#mainTab2">http://www.microsoft.com/maps/Licensing/licensing.aspx#mainTab2</a></p>
+
+<h6>
+<a id="azure-search-service-are-free-excluding-outbound-data-transfers-3-data-connections--indexes--indexers-50-mb-total-storage-10000-documents" class="anchor" href="#azure-search-service-are-free-excluding-outbound-data-transfers-3-data-connections--indexes--indexers-50-mb-total-storage-10000-documents" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Azure Search Service are free excluding outbound data transfers (3 data connections / indexes / indexers, 50 MB Total Storage, 10,000 Documents).</h6>
+
+<p><a href="https://azure.microsoft.com/en-us/pricing/details/search/">https://azure.microsoft.com/en-us/pricing/details/search/</a></p>
+
+<h6>
+<a id="data-transfers-pricing-details" class="anchor" href="#data-transfers-pricing-details" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Data Transfers Pricing Details</h6>
+
+<p><a href="https://azure.microsoft.com/en-us/pricing/details/data-transfers/">https://azure.microsoft.com/en-us/pricing/details/data-transfers/</a></p>
+
+<h2>
+<a id="related-projects" class="anchor" href="#related-projects" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Related Projects:</h2>
+
+<h3>
+<a id="example-swift-apps-by-mark-hamilton-dryverless" class="anchor" href="#example-swift-apps-by-mark-hamilton-dryverless" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example Swift Apps by Mark Hamilton, Dryverless</h3>
+
+<p>Collection of example applications written in Swift / Objective-C for iOS 9.x (developed under 9.2.1 SDK - will be migrated to 9.3 when released)</p>
+
+<h6>
+<a id="httpsgithubcomthedarkcodeexample-swift-apps" class="anchor" href="#httpsgithubcomthedarkcodeexample-swift-apps" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://github.com/TheDarkCode/Example-Swift-Apps">https://github.com/TheDarkCode/Example-Swift-Apps</a>
+</h6>
+
+<h3>
+<a id="angularazuresearch-by-mark-hamilton-dryverless" class="anchor" href="#angularazuresearch-by-mark-hamilton-dryverless" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>AngularAzureSearch by Mark Hamilton, Dryverless</h3>
+
+<h6>
+<a id="httpsgithubcomthedarkcodeangularazuresearch" class="anchor" href="#httpsgithubcomthedarkcodeangularazuresearch" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://github.com/TheDarkCode/AngularAzureSearch/">https://github.com/TheDarkCode/AngularAzureSearch/</a>
+</h6>
+
+<h3>
+<a id="azure-search-demos-by-liam-cavanagh-microsoft" class="anchor" href="#azure-search-demos-by-liam-cavanagh-microsoft" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Azure Search Demos by Liam Cavanagh, Microsoft</h3>
+
+<h6>
+<a id="httpsgithubcomliamcaazuresearchdemos" class="anchor" href="#httpsgithubcomliamcaazuresearchdemos" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://github.com/liamca/AzureSearchDemos">https://github.com/liamca/AzureSearchDemos</a>
+</h6>
+
+<h6>
+<a id="httpazuremicrosoftcomen-usdocumentationservicessearch" class="anchor" href="#httpazuremicrosoftcomen-usdocumentationservicessearch" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="http://azure.microsoft.com/en-us/documentation/services/search/">http://azure.microsoft.com/en-us/documentation/services/search/</a>
+</h6>
+
+<h2>
+<a id="helpful-links" class="anchor" href="#helpful-links" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Helpful Links</h2>
+
+<h6>
+<a id="azure-search-documentation-httpsmsdnmicrosoftcomen-uslibraryazuredn798933aspx" class="anchor" href="#azure-search-documentation-httpsmsdnmicrosoftcomen-uslibraryazuredn798933aspx" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Azure Search Documentation: <a href="https://msdn.microsoft.com/en-us/library/azure/dn798933.aspx">https://msdn.microsoft.com/en-us/library/azure/dn798933.aspx</a>
+</h6>
+
+<h2>
+<a id="related-microsoft-virtual-academy-courses" class="anchor" href="#related-microsoft-virtual-academy-courses" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Related Microsoft Virtual Academy Courses</h2>
+
+<h4>
+<a id="adding-microsoft-azure-search-to-your-websites-and-apps" class="anchor" href="#adding-microsoft-azure-search-to-your-websites-and-apps" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Adding Microsoft Azure Search to Your Websites and Apps:</h4>
+
+<h6>
+<a id="httpsmvamicrosoftcomen-ustraining-coursesadding-microsoft-azure-search-to-your-websites-and-apps-10540" class="anchor" href="#httpsmvamicrosoftcomen-ustraining-coursesadding-microsoft-azure-search-to-your-websites-and-apps-10540" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://mva.microsoft.com/en-us/training-courses/adding-microsoft-azure-search-to-your-websites-and-apps-10540">https://mva.microsoft.com/en-us/training-courses/adding-microsoft-azure-search-to-your-websites-and-apps-10540</a>
+</h6>
+
+<h2>
+<a id="support" class="anchor" href="#support" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support:</h2>
+
+<h5>
+<a id="send-any-questions-or-requests-to-supportdryverlesscom" class="anchor" href="#send-any-questions-or-requests-to-supportdryverlesscom" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Send any questions or requests to: <a href="mailto:support@dryverless.com">support@dryverless.com</a>
+</h5>
+
+<h2>
+<a id="disclaimer" class="anchor" href="#disclaimer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Disclaimer:</h2>
+
+<h5>
+<a id="while-there-may-be-a-general-license-applied-to-the-repo-as-a-whole-you-should-not-assume-all-media-example-project-assets-like-images-or-videos-are-under-that-same-license-creative-commons-and-open-source-images-are-used-throughout-with-attributions-given-inside-each-relevant-projects-files-however-copyright-or-trademark-use-allowances-or-restrictions-can-be-changed-by-authors-and-may-not-be-accurately-reflected-in-the-repo-as-a-rule-of-thumb-you-should-use-the-provided-samples-only-as-guides-to-help-you-learn-not-as-commercial-assets-to-use-in-your-new-app-on-the-app-store-for-example-sample-project-assets-like-the-dryverless-logo-are-not-under-the-mit-license" class="anchor" href="#while-there-may-be-a-general-license-applied-to-the-repo-as-a-whole-you-should-not-assume-all-media-example-project-assets-like-images-or-videos-are-under-that-same-license-creative-commons-and-open-source-images-are-used-throughout-with-attributions-given-inside-each-relevant-projects-files-however-copyright-or-trademark-use-allowances-or-restrictions-can-be-changed-by-authors-and-may-not-be-accurately-reflected-in-the-repo-as-a-rule-of-thumb-you-should-use-the-provided-samples-only-as-guides-to-help-you-learn-not-as-commercial-assets-to-use-in-your-new-app-on-the-app-store-for-example-sample-project-assets-like-the-dryverless-logo-are-not-under-the-mit-license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>While there may be a general license applied to the repo as a whole, you should not assume all media (example project assets like images or videos) are under that same license. Creative commons and open source images are used throughout with attributions given inside each relevant project's files; however, copyright or trademark use allowances or restrictions can be changed by authors and may not be accurately reflected in the repo. As a rule of thumb, you should use the provided samples only as guides to help you learn, not as commercial assets to use in your new app on the App Store. For example, sample project assets like the dryverless logo are not under the MIT license.</h5>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/TheDarkCode">TheDarkCode</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
