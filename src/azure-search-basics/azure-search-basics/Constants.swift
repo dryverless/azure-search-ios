@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 /*
 
@@ -53,3 +54,13 @@ let RECOMMENDATION_HEADERS = [
 public typealias ResultsDownloadComplete = () -> ()
 
 public typealias DetailDownloadComplete = () -> ()
+
+public extension UISearchController {
+    
+    override func prefersStatusBarHidden() -> Bool {
+        
+        return true
+        
+    }
+    
+}

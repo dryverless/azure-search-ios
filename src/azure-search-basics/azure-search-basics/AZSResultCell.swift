@@ -15,7 +15,7 @@ class AZSResultCell: UITableViewCell {
         // Initialization code
     }
 
-    func configureCell(result: AZSResult) {
+    func configureCell(result: AZSResult?) {
         
         // Configure
         

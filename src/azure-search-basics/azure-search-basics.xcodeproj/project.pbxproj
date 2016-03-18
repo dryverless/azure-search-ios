@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D0BBA161C9BF06600E23544 /* TrailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D0BBA151C9BF06600E23544 /* TrailCell.xib */; };
+		4D0BBA181C9BF07700E23544 /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D0BBA171C9BF07700E23544 /* MovieCell.xib */; };
+		4D0BBA1A1C9BF0A700E23544 /* TrailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0BBA191C9BF0A700E23544 /* TrailCell.swift */; };
+		4D0BBA1C1C9BF0B000E23544 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0BBA1B1C9BF0B000E23544 /* MovieCell.swift */; };
+		4D0BBA1E1C9BF0E900E23544 /* AZSSuggestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D0BBA1D1C9BF0E900E23544 /* AZSSuggestionCell.xib */; };
+		4D0BBA201C9BF0F600E23544 /* AZSSuggestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0BBA1F1C9BF0F600E23544 /* AZSSuggestionCell.swift */; };
+		4D0BBA221C9BFDF000E23544 /* AZSPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0BBA211C9BFDF000E23544 /* AZSPageViewController.swift */; };
 		4D4BE9391C9A86C6002CBF78 /* AZSFacet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4BE9381C9A86C6002CBF78 /* AZSFacet.swift */; };
 		4D4D70031C96B7F70007FC01 /* MovieResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D70021C96B7F70007FC01 /* MovieResult.swift */; };
 		4D4D70051C96BC840007FC01 /* AZSSuggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D70041C96BC840007FC01 /* AZSSuggestion.swift */; };
@@ -67,6 +74,13 @@
 
 /* Begin PBXFileReference section */
 		4C6D23C3F269D3AD0AFC2E62 /* Pods_azure_search_basics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_azure_search_basics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D0BBA151C9BF06600E23544 /* TrailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrailCell.xib; sourceTree = "<group>"; };
+		4D0BBA171C9BF07700E23544 /* MovieCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
+		4D0BBA191C9BF0A700E23544 /* TrailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrailCell.swift; sourceTree = "<group>"; };
+		4D0BBA1B1C9BF0B000E23544 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		4D0BBA1D1C9BF0E900E23544 /* AZSSuggestionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AZSSuggestionCell.xib; sourceTree = "<group>"; };
+		4D0BBA1F1C9BF0F600E23544 /* AZSSuggestionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZSSuggestionCell.swift; sourceTree = "<group>"; };
+		4D0BBA211C9BFDF000E23544 /* AZSPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZSPageViewController.swift; sourceTree = "<group>"; };
 		4D4BE9381C9A86C6002CBF78 /* AZSFacet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZSFacet.swift; sourceTree = "<group>"; };
 		4D4D70021C96B7F70007FC01 /* MovieResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieResult.swift; sourceTree = "<group>"; };
 		4D4D70041C96BC840007FC01 /* AZSSuggestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZSSuggestion.swift; sourceTree = "<group>"; };
@@ -281,6 +295,10 @@
 			children = (
 				4DB6AFE11C91726F00278E09 /* Main.storyboard */,
 				4DB6AFE91C91726F00278E09 /* LaunchScreen.storyboard */,
+				4D0BBA151C9BF06600E23544 /* TrailCell.xib */,
+				4D0BBA171C9BF07700E23544 /* MovieCell.xib */,
+				4D0BBA191C9BF0A700E23544 /* TrailCell.swift */,
+				4D0BBA1B1C9BF0B000E23544 /* MovieCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -305,6 +323,8 @@
 				4DFEB8211C92BE99005C76B9 /* Search.storyboard */,
 				4DFEB82A1C92C3EC005C76B9 /* AZSResultCell.xib */,
 				4DFEB82E1C92CA1B005C76B9 /* AZSResultCell.swift */,
+				4D0BBA1D1C9BF0E900E23544 /* AZSSuggestionCell.xib */,
+				4D0BBA1F1C9BF0F600E23544 /* AZSSuggestionCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -318,6 +338,7 @@
 				4DFEB8261C92BFBD005C76B9 /* AZSDetailVC.swift */,
 				4D9AB7C61C972D3D0057FFC3 /* AZSViewController.swift */,
 				4D9AB7C81C972D760057FFC3 /* AZSCollectionVC.swift */,
+				4D0BBA211C9BFDF000E23544 /* AZSPageViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -437,8 +458,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D0BBA161C9BF06600E23544 /* TrailCell.xib in Resources */,
+				4D0BBA181C9BF07700E23544 /* MovieCell.xib in Resources */,
 				4DB6AFEB1C91726F00278E09 /* LaunchScreen.storyboard in Resources */,
 				4DB6AFE81C91726F00278E09 /* Assets.xcassets in Resources */,
+				4D0BBA1E1C9BF0E900E23544 /* AZSSuggestionCell.xib in Resources */,
 				4DFEB82B1C92C3EC005C76B9 /* AZSResultCell.xib in Resources */,
 				4DB6AFE31C91726F00278E09 /* Main.storyboard in Resources */,
 				4DFEB8221C92BE99005C76B9 /* Search.storyboard in Resources */,
@@ -520,19 +544,23 @@
 				4D9AB7C71C972D3D0057FFC3 /* AZSViewController.swift in Sources */,
 				4D9AB7D41C9738B90057FFC3 /* HomeGeoSearchVC.swift in Sources */,
 				4D9AB7DC1C973E790057FFC3 /* AZSMapAnnotation.swift in Sources */,
+				4D0BBA1A1C9BF0A700E23544 /* TrailCell.swift in Sources */,
 				4DB6AFE01C91726F00278E09 /* ViewController.swift in Sources */,
 				4DB6AFE61C91726F00278E09 /* azure_search_basics.xcdatamodeld in Sources */,
 				4DFEB82F1C92CA1B005C76B9 /* AZSResultCell.swift in Sources */,
+				4D0BBA201C9BF0F600E23544 /* AZSSuggestionCell.swift in Sources */,
 				4D4BE9391C9A86C6002CBF78 /* AZSFacet.swift in Sources */,
 				4D9AB7D21C9738960057FFC3 /* MovieCollectionVC.swift in Sources */,
 				4DFEB81A1C92BCD3005C76B9 /* AZSGeoSearchVC.swift in Sources */,
 				4D9AB7CB1C972E150057FFC3 /* AZSSuggestions.swift in Sources */,
+				4D0BBA1C1C9BF0B000E23544 /* MovieCell.swift in Sources */,
 				4D8ABCE81C960388006E1D35 /* AZSClient.swift in Sources */,
 				4D9AB7D61C9739110057FFC3 /* TrailDetailVC.swift in Sources */,
 				4DFEB82D1C92C743005C76B9 /* AZSAnnotation.swift in Sources */,
 				4DFEB8281C92BFBD005C76B9 /* AZSDetailVC.swift in Sources */,
 				4DB6B0111C9172CB00278E09 /* AZSResults.swift in Sources */,
 				4D9AB7CE1C9738200057FFC3 /* GeoSearch.swift in Sources */,
+				4D0BBA221C9BFDF000E23544 /* AZSPageViewController.swift in Sources */,
 				4D9AB7D01C9738840057FFC3 /* TrailTableVC.swift in Sources */,
 				4DB6B0131C91731A00278E09 /* AZSResult.swift in Sources */,
 				4D4D70031C96B7F70007FC01 /* MovieResult.swift in Sources */,

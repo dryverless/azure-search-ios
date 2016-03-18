@@ -22,31 +22,16 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "azure_search_basics.HomeGeoSearchVC.__deallocating_deinit"
-                  moduleName = "azure-search-basics"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Mark/Desktop/Udemy/SwiftCourse/azure-search-basics/azure-search-basics/HomeGeoSearchVC.swift"
-                  timestampString = "479909754.065689"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
                   symbolName = "azure_search_basics.HomeGeoSearchVC.init (azure_search_basics.HomeGeoSearchVC.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; azure_search_basics.HomeGeoSearchVC"
                   moduleName = "azure-search-basics"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Mark/Desktop/Udemy/SwiftCourse/azure-search-basics/azure-search-basics/HomeGeoSearchVC.swift"
-                  timestampString = "479909754.065998"
+                  timestampString = "479981407.210699"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "64">
+                  offsetFromSymbolStart = "57">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -56,12 +41,12 @@
                   moduleName = "azure-search-basics"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Mark/Desktop/Udemy/SwiftCourse/azure-search-basics/azure-search-basics/HomeGeoSearchVC.swift"
-                  timestampString = "479909754.066231"
+                  timestampString = "479981407.210988"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "24">
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
          </BreakpointContent>
