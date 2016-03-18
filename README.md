@@ -1,7 +1,16 @@
-# azure-search-ios
+<h1 align="center">
+
+<!--span style="height:72px;"><img src="https://raw.githubusercontent.com/TheDarkCode/azure-search-ios/master/src/azure-search-basics/azure-search-basics/Assets.xcassets/AppIcon.appiconset/Icon-72.png" alt="AngularAzureSearch"></span-->
+
+<span style="margin-bottom:0.5em;">Azure Search iOS SDK</span>
+
+</h1>
+
 Modular SDK written in Swift 2 that simplifies incorporating Azure Search into native iOS applications for iPhones and iPads. Requires Whole Module Optimization to be enabled for best performance. **Non-commercial use only.**
 
-
+<p align="center">
+<img src="https://raw.githubusercontent.com/TheDarkCode/azure-search-ios/master/img/AZSSearch.png" alt="AngularAzureSearch" height="auto" width="60%">
+</p>
 
 ##Requirements: 
 
