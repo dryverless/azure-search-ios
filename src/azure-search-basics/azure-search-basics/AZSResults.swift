@@ -10,17 +10,17 @@ import Foundation
 
 // Basic Structure
 // "@odata.context": String
-// "value": [Dictionary<String, AnyObject>]
+// "value": [[String : AnyObject]]
 // "@odata.nextLink": String
 
 struct AZSResults {
     
     private var _context: String? // @odata.context
-    private var _value:[Dictionary<String, AnyObject>]? // value
+    private var _value:[[String : AnyObject]]? // value
     private var _nextLink: String? // @odata.nextLink
     
     // Raw Results from API
-    private var _results: Dictionary<String, AnyObject>!
+    private var _results: [String : AnyObject]!
     
     
     // MARK: - Downloaded Results
@@ -40,7 +40,7 @@ struct AZSResults {
     //
     //    }
     
-    var results: Dictionary<String, AnyObject> {
+    var results: [String : AnyObject] {
         
         get {
             
@@ -61,23 +61,23 @@ struct AZSResults {
         
         get {
          
-            if let ctx: String = results["@odata.context"] as? String ?? String() {
+            if let ctx: String = results["@odata.context"] as? String ?? "" {
                 
                 return ctx
                 
             }
             
-            return _context ?? String()
+            return _context ?? ""
             
         }
         
     }
     
-    var value: [Dictionary<String, AnyObject>] {
+    var value: [[String : AnyObject]] {
         
         get {
             
-            if let results: [Dictionary<String, AnyObject>] = results["value"] as? [Dictionary<String, AnyObject>] ?? [Dictionary<String, AnyObject>]() {
+            if let results: [[String : AnyObject]] = results["value"] as? [[String : AnyObject]] ?? [[String : AnyObject]]() {
                 
                 return results
                 
@@ -92,12 +92,12 @@ struct AZSResults {
        
         get {
             
-            if let nLink: String = results["@odata.nextLink"] as? String ?? String() {
+            if let nLink: String = results["@odata.nextLink"] as? String ?? "" {
                 
                 return nLink
             }
             
-            return _nextLink ?? String()
+            return _nextLink ?? ""
             
         }
         
@@ -105,11 +105,11 @@ struct AZSResults {
     
     // MARK: - Initialize with results download from API.
     
-    init(results: Dictionary<String, AnyObject>) {
+    init(results: [String : AnyObject]) {
         
         self.init()
         
-        if let Results: Dictionary<String, AnyObject> = results {
+        if let Results: [String : AnyObject] = results {
             
             self._results = Results
             
@@ -121,7 +121,7 @@ struct AZSResults {
     
     // MARK: - Initialize with already parsed results download from API.
     
-    init(context: String, results: [Dictionary<String, AnyObject>], nextLink: String) {
+    init(context: String, results: [[String : AnyObject]], nextLink: String) {
         
         self.init()
         
@@ -132,7 +132,7 @@ struct AZSResults {
         }
         
         
-        if let values: [Dictionary<String, AnyObject>] = results where values.count > 0 {
+        if let values: [[String : AnyObject]] = results where values.count > 0 {
             
             self._value = values
             
@@ -149,7 +149,7 @@ struct AZSResults {
     
     init() {
         
-        self._results = Dictionary<String,AnyObject>()
+        self._results = [String : AnyObject]()
         
     }
     

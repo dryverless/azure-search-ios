@@ -1,5 +1,5 @@
 //
-//  AZSGeoSearchVC.swift
+//  FreshnessScoringFunc.swift
 //  azure-search-basics
 //
 //  Created by Mark Hamilton on 3/21/16.
@@ -7,10 +7,9 @@
 //
 
 import Foundation
-import UIKit
 
-class AZSGeoSearchVC: AZSViewController {
+struct FreshnessScoringFunc {
     
-    
+    var boostingDuration: String
     
 }

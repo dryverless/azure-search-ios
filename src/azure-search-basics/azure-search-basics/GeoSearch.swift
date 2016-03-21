@@ -15,4 +15,6 @@ protocol GeoSearch {
     
     func locateWithCoordinates(Longitude lon: Double, Latitude lat: Double, locationTitle title: String?)
     
+//    optional func locateWithCoordinatesAndTitle(Longitude lon: Double, Latitude lat: Double, locationTitle title: String?, locationSubTitle subtitle: String?)
+    
 }

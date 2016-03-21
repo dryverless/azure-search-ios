@@ -1,5 +1,5 @@
 //
-//  TrailResult.swift
+//  Trail.swift
 //  azure-search-basics
 //
 //  Created by Mark Hamilton on 3/10/16.
@@ -8,7 +8,23 @@
 
 import Foundation
 
-struct TrailResult: AZSResult {
+struct Trail: AZSResult {
+    
+    enum InitializationError: ErrorType {
+        
+        case MissingScore
+        
+        case MissingId
+        
+        case MissingName
+        
+        case MissingCounty
+        
+        case MissingElevation
+        
+        case MissingLocation
+        
+    }
     
     // Structure ::
     // @search.score - superclass
@@ -76,6 +92,55 @@ struct TrailResult: AZSResult {
                 return elev
                 
             }
+            
+        }
+        
+    }
+    
+    init(trail: [String: AnyObject]) throws {
+        
+        guard let score: Double = trail["@search.score"] as? Double else {
+            
+            throw InitializationError.MissingScore
+            
+        }
+        
+        guard let tId: String = trail["id"] as? String else {
+            
+            throw InitializationError.MissingId
+            
+        }
+        
+        guard let tName: String = trail["name"] as? String else {
+            
+            throw InitializationError.MissingName
+            
+        }
+        
+        guard let tCounty: String = trail["county"] as? String else {
+            
+            throw InitializationError.MissingCounty
+        }
+        
+        guard let tLoc: [String : AnyObject] = trail["location"] as? [String : AnyObject] else {
+            
+            throw InitializationError.MissingLocation
+            
+        }
+        
+        self._searchScore = score ?? 1
+        self._id = tId ?? ""
+        self._name = tName ?? ""
+        self._county = tCounty ?? ""
+        do {
+            
+            self._location = try AZSLocation(location: tLoc)
+        
+        } catch let err as NSError {
+            
+            print(err.debugDescription)
+            
+            self._location = AZSLocation()
             
         }
         

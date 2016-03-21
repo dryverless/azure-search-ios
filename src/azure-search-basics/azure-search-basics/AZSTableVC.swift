@@ -281,7 +281,7 @@ class AZSTableVC: UITableViewController, UISearchResultsUpdating, UISearchBarDel
             
             let result = response.result
             
-            if let results = result.value as? Dictionary<String, AnyObject> {
+            if let results = result.value as? [String : AnyObject] {
                 
                 print(results.debugDescription)
                 

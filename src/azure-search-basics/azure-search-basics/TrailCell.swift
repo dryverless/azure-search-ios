@@ -7,3 +7,30 @@
 //
 
 import Foundation
+import UIKit
+
+class TrailCell: UITableViewCell {
+    
+    @IBOutlet weak var trailTitleLabel: UILabel!
+    @IBOutlet weak var trailCountyLabel: UILabel!
+    @IBOutlet weak var trailElevationLabel: UILabel!
+    
+    var trail: Trail!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+        
+    }
+    
+    func configureCell(trail: Trail) {
+        
+        self.trail = trail
+        
+        self.trailTitleLabel.text = self.trail.name.capitalizedString
+        self.trailCountyLabel.text = self.trail.county.capitalizedString
+        self.trailElevationLabel.text = "\(self.trail.elevation)"
+        
+    }
+    
+}

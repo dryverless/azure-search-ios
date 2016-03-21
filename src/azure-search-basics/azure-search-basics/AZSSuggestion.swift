@@ -31,7 +31,7 @@ struct AZSSuggestion {
     // id, title
     
     private var _id: String?
-    private var _value: Dictionary<String, String>?
+    private var _value: [String : AnyObject]?
     private var _searchText: String?
     private var _attributedText: NSAttributedString?
     
@@ -60,17 +60,17 @@ struct AZSSuggestion {
         
     }
     
-    init(value: Dictionary<String, String>) {
+    init(value: [String : AnyObject]) {
         
         self._value = value
         
-        if let i: String = value["id"] {
+        if let i: String = value["id"] as? String {
             
             self._id = i
             
         }
         
-        if let t: String = value["@search.text"] {
+        if let t: String = value["@search.text"] as? String {
             
             self._searchText = t
             
@@ -80,9 +80,9 @@ struct AZSSuggestion {
                 
                 self._attributedText = attributed
             
-            } catch {
+            } catch let err as NSError {
             
-                print(error)
+                print(err.debugDescription)
             
             }
             

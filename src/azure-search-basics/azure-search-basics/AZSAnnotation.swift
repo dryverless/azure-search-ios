@@ -14,6 +14,14 @@ protocol AZSAnnotation: MKAnnotation {
     
     var coordinate: CLLocationCoordinate2D { get }
     
+    var title: String { get }
+    
+    var subtitle: String { get }
+    
+    init(title: String, subtitle: String, coordinate: CLLocationCoordinate2D)
+    
+    init(title: String, coordinate: CLLocationCoordinate2D)
+    
     init(coordinate: CLLocationCoordinate2D)
     
 }

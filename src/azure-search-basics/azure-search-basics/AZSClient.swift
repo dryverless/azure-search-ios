@@ -8,7 +8,7 @@
 
 import Foundation
 
-class AZSClient: NSObject {
+class AZSClient {
     
     static let sharedAZSClient = AZSClient()
     
@@ -25,7 +25,7 @@ class AZSClient: NSObject {
             
             let result = response.result
             
-            if let results = result.value as? Dictionary<String, AnyObject> {
+            if let results = result.value as? [String : AnyObject] {
                 
                 print(results.debugDescription)
                 
@@ -38,7 +38,9 @@ class AZSClient: NSObject {
     
     */
     
-    var selectedFields: String = "&$select="
+//    var image:UIImage = UIImage(
+//    
+//    var selectedFields: String = "&$select="
     
     // &$select=id,title
 //    for field in fields {
@@ -62,12 +64,32 @@ class AZSClient: NSObject {
     
     // Add To Index
     
+    /*
+
+    POST https://visitusa.search.windows.net/indexes/trails?api-version=2015-02-28
+    
+    Headers: api-key / Content-Type: application/json; charset=utf-8
+    
+    Body:
+    
+    See AddTrails.json
+    
+    */
+    
     func addToIndex() {
         
     }
     
     
     // Delete Index
+    /*
+
+    DELETE https://visitusa.search.windows.net/indexes/trails?api-version=2015-02-28
+    
+    Headers: api-key / Content-Type: application/json; charset=utf-8
+    
+    */
+    
     func deleteIndex() {
         
         
@@ -75,6 +97,36 @@ class AZSClient: NSObject {
     
     
     // Create Index
+    
+    /*
+
+    PUT https://visitusa.search.windows.net/indexes/trails?api-version=2015-02-28
+    
+    Headers: api-key / Content-Type: application/json; charset=utf-8
+    
+    Body:
+    
+    {
+        "name": "trails",
+        
+        "fields": [
+    
+            {"name": "id", "type": "Edm.String", "key": true, "searchable": false},
+    
+            {"name": "name", "type": "Edm.String"},
+    
+            {"name": "county", "type": "Edm.String"},
+    
+            {"name": "elevation", "type": "Edm.Int32"},
+    
+            {"name": "location", "type": "Edm.GeographyPoint"}
+    
+        ]
+    
+    }
+    
+    */
+    
     func createIndex() {
         
         

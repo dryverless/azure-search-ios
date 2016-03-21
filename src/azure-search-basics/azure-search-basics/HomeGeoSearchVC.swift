@@ -7,8 +7,8 @@
 //
 
 import Foundation
-
-class HomeGeoSearchVC: AZSGeoSearchVC {
+// AZSGeoSearchVC
+class HomeGeoSearchVC: AZSViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()

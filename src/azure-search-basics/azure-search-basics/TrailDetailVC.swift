@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import MapKit
 
 class TrailDetailVC: AZSDetailVC {
+    
+    var trail: Trail!
     
     override func viewDidLoad() {
         super.viewDidLoad()

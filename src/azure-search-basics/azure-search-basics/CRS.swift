@@ -10,8 +10,34 @@ import Foundation
 
 struct CRS {
     
+    /*
+    
+    FORMAT OF JSON
+
+    "crs": {
+    
+        "type": "name",
+        
+        "properties": {
+            "name": "EPSG:4326"
+        }
+    
+    }
+    
+    */
+    
+    enum InitializationError: ErrorType {
+        
+        case InvalidFormat
+        
+        case MissingType
+        
+        case MissingProperties
+        
+    }
+    
     private var _type: String = "name"
-    private var _properties: Dictionary<String,AnyObject>!
+    private var _properties: [String : AnyObject]!
     
     var type: String {
         
@@ -23,13 +49,38 @@ struct CRS {
         
     }
     
-    var properties: Dictionary<String,AnyObject> {
+    var properties: [String : AnyObject] {
         
         get {
             
             return _properties
             
         }
+        
+    }
+    
+    init(crs: [String : AnyObject]) throws {
+        
+        if crs.count == 0 {
+            
+            throw InitializationError.InvalidFormat
+            
+        }
+        
+        guard let typ = crs["type"] as? String else {
+            
+            throw InitializationError.MissingType
+            
+        }
+        
+        guard let props = crs["properties"] as? [String : AnyObject] else {
+            
+            throw InitializationError.MissingProperties
+            
+        }
+        
+        self._type = typ
+        self._properties = props
         
     }
     

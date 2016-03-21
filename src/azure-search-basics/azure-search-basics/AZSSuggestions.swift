@@ -11,7 +11,7 @@ import UIKit
 
 struct AZSSuggestions {
     
-    private var _value: Dictionary<String, AnyObject>?
+    private var _value: [String : AnyObject]?
     private var _context: String?
     private var _suggestions = [AZSSuggestion]()
     
@@ -61,7 +61,7 @@ struct AZSSuggestions {
         
     }
     
-    init(value: Dictionary<String, AnyObject>) {
+    init(value: [String : AnyObject]) {
         
         self._value = value
         
@@ -71,7 +71,7 @@ struct AZSSuggestions {
             
         }
         
-        if let sArr = value["value"] as? [Dictionary<String, String>] {
+        if let sArr = value["value"] as? [[String : AnyObject]] {
             
             for s in sArr {
                 
