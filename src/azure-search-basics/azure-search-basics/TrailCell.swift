@@ -29,7 +29,7 @@ class TrailCell: UITableViewCell {
         
         self.trailTitleLabel.text = self.trail.name.capitalizedString
         self.trailCountyLabel.text = self.trail.county.capitalizedString
-        self.trailElevationLabel.text = "\(self.trail.elevation)"
+        self.trailElevationLabel.text = "\(self.trail.elevation) m"
         
     }
     
