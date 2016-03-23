@@ -117,6 +117,7 @@ class AZSGeoResultVC: AZSViewController, GeoSearch, UITableViewDelegate, UITable
     func createAnnotationFromAddress(location: CLLocation) {
         
         let annotation = AZSMapAnnotation(coordinate: location.coordinate)
+        
         map.addAnnotation(annotation)
         
     }

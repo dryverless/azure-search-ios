@@ -15,7 +15,7 @@ class TrailCell: UITableViewCell {
     @IBOutlet weak var trailCountyLabel: UILabel!
     @IBOutlet weak var trailElevationLabel: UILabel!
     
-    var trail: Trail!
+    internal var trail: Trail!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,9 +27,9 @@ class TrailCell: UITableViewCell {
         
         self.trail = trail
         
-        self.trailTitleLabel.text = self.trail.name.capitalizedString
+        defer { self.trailTitleLabel.text = self.trail.name.capitalizedString
         self.trailCountyLabel.text = self.trail.county.capitalizedString
-        self.trailElevationLabel.text = "\(self.trail.elevation) m"
+            self.trailElevationLabel.text = "\(String(self.trail.elevation)) m" }
         
     }
     

@@ -11,6 +11,8 @@ import Alamofire
 
 class AZSTableVC: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate {
     
+    @IBInspectable
+    
     var searchResults: AZSResults?
     var suggestedSearchResults = [AnyObject]() // AZSSuggestions()
     
@@ -381,22 +383,22 @@ class AZSTableVC: UITableViewController, UISearchResultsUpdating, UISearchBarDel
 
     // MARK: - Navigation
 
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        
-//        if segue.identifier == "AZSDetailVC" {
-//            
-//            if let detailVC = segue.destinationViewController as? AZSDetailVC {
-//                
-//                if let azsresult = sender as? AZSResult {
-//                    
-//                    detailVC.result = azsresult
-//                    
-//                }
-//                
-//            }
-//            
-//        }
-//        
-//    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "AZSDetailVC" {
+            
+            if let detailVC = segue.destinationViewController as? AZSDetailVC {
+                
+                if let azsresult = sender as? AZSResult {
+                    
+                    detailVC.result = azsresult as? AnyObject
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
 
 }

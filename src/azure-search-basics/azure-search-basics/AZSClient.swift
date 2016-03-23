@@ -7,10 +7,13 @@
 //
 
 import Foundation
+import UIKit
 
-class AZSClient {
+struct AZSClient {
     
     static let sharedAZSClient = AZSClient()
+    
+    internal var searchInstances: [UIViewController]?
     
     // Query Index
     /*

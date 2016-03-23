@@ -20,15 +20,17 @@ class TrailTableVC: AZSTableVC {
         
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> TrailCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("TrailCell", forIndexPath: indexPath) as! TrailCell
         
         var cellTrail: Trail!
+
+        let selectedTrail = searchResults!.results["value"]![indexPath.row]! as? [String : AnyObject]
         
         do {
             
-            cellTrail = try Trail(trail: searchResults!.results["value"]![indexPath.row] as! [String: AnyObject])
+            cellTrail = try Trail(trail: selectedTrail!)
         
         } catch {
             
@@ -44,19 +46,10 @@ class TrailTableVC: AZSTableVC {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        var cellTrail: Trail!
+        let cellTrail: [String : AnyObject] = searchResults!.results["value"]![indexPath.row] as! [String : AnyObject]
+
         
-        do {
-            
-            cellTrail = try Trail(trail: searchResults!.results["value"]![indexPath.row] as! [String: AnyObject])
-            
-        } catch {
-            
-            print(error)
-            
-        }
-        
-        self.performSegueWithIdentifier("TrailDetailVC", sender: cellTrail as? AnyObject)
+        self.performSegueWithIdentifier("TrailDetailVC", sender: cellTrail)
         
     }
     
@@ -68,9 +61,18 @@ class TrailTableVC: AZSTableVC {
     
             if let detailVC = segue.destinationViewController as? TrailDetailVC {
     
-                if let trail = sender as? Trail {
+                if let trail = sender as? [String : AnyObject] {
     
-                    detailVC.trail = trail
+                    do {
+                        
+                        detailVC.trail = try Trail(trail: trail)
+                        
+                    } catch {
+                        
+                        return
+                        //print(error)
+                        
+                    }
     
                 }
     
@@ -94,21 +96,21 @@ class TrailTableVC: AZSTableVC {
         
         guard let TrailDetailVC = storyboard?.instantiateViewControllerWithIdentifier("TrailDetailVC") as? TrailDetailVC else { return nil }
         
-        var cellTrail: Trail!
+        let cellTrail: [String : AnyObject] = searchResults!.results["value"]![indexPath.row] as! [String : AnyObject]
         
-        do {
-            
-            cellTrail = try Trail(trail: searchResults!.results["value"]![indexPath.row] as! [String: AnyObject])
-            
-        } catch {
-            
-            print(error)
-            
-        }
         
         // Pass previewDetail to TrailDetailVC here
         
-        TrailDetailVC.trail = cellTrail
+        do {
+            
+            TrailDetailVC.trail = try Trail(trail: cellTrail)
+            
+        } catch let err as NSError {
+            
+            print(err)
+            
+        }
+        
         
         TrailDetailVC.preferredContentSize = CGSize(width: 0.0, height: 0.0) // Default height and width
         
