@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'B4EBC8F7DFF943F694F15914'
-               BlueprintName = 'Pods-azure-search-basics'
+               BlueprintIdentifier = '5850F6C8E83D55CAD6B12D90'
+               BlueprintName = 'PeekPop'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Pods_azure_search_basics.framework'>
+               BuildableName = 'PeekPop.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

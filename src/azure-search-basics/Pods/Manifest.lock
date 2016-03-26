@@ -1,13 +1,16 @@
 PODS:
-  - Alamofire (3.2.1)
+  - Alamofire (3.3.0)
   - FLEX (2.3.0)
+  - PeekPop (0.1.4)
 
 DEPENDENCIES:
   - Alamofire (~> 3.0)
   - FLEX (~> 2.0)
+  - PeekPop (~> 0.1)
 
 SPEC CHECKSUMS:
-  Alamofire: f11d8624a05f5d39e0c99309b3e600a3ba64298a
+  Alamofire: 9054db4a1b1ca9e363223183e01cea380159a27c
   FLEX: ba80ea13d2c784e85e616137fd4eff164781e364
+  PeekPop: 60d582dccea08948e7e033411b6d7917be6bcb2e
 
 COCOAPODS: 0.39.0

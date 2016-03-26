@@ -8,6 +8,17 @@
 
 import Foundation
 
+
+public extension Int {
+    
+    public func add(num: Int) {
+        
+        self.advancedBy(num)
+        
+    }
+    
+}
+
 public extension NSObject {
     
     /*

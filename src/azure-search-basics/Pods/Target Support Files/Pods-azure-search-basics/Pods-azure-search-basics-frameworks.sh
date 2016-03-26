@@ -86,7 +86,9 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-azure-search-basics/Alamofire.framework"
   install_framework "Pods-azure-search-basics/FLEX.framework"
+  install_framework "Pods-azure-search-basics/PeekPop.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-azure-search-basics/Alamofire.framework"
+  install_framework "Pods-azure-search-basics/PeekPop.framework"
 fi

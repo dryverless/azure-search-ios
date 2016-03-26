@@ -23,13 +23,18 @@ class TrailDetailVC: AZSDetailVC, GeoSearch, UITableViewDelegate, UITableViewDat
         map.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
-        
-        tableView.reloadData()
+        setupTrailMap()
     
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        
+        //setupTrailMap()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         
         setupTrailMap()
     }
@@ -51,9 +56,12 @@ class TrailDetailVC: AZSDetailVC, GeoSearch, UITableViewDelegate, UITableViewDat
             
         }
         
+        self.title = trail.name
+        
         tableView.reloadData()
         
     }
+
     
     // MARK: - GeoSearch Protocol Methods
     
@@ -73,6 +81,7 @@ class TrailDetailVC: AZSDetailVC, GeoSearch, UITableViewDelegate, UITableViewDat
     func centerMapOnCoordinate2D(location: CLLocationCoordinate2D) {
         
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location, regionRadius * 2, regionRadius * 2)
+        //map.mapType = MKMapType.HybridFlyover
         map.setRegion(coordinateRegion, animated: true)
         
     }
@@ -85,8 +94,9 @@ class TrailDetailVC: AZSDetailVC, GeoSearch, UITableViewDelegate, UITableViewDat
         
     }
     
+
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-    
+        
         if annotation.isKindOfClass(AZSMapAnnotation) {
             
             let annoView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "Default")
@@ -100,6 +110,17 @@ class TrailDetailVC: AZSDetailVC, GeoSearch, UITableViewDelegate, UITableViewDat
             // No Delay
             return annoView
             
+        } else if annotation.isKindOfClass(MKUserLocation) {
+            
+            let annoView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "Default")
+            
+            // Default is redColor()
+            
+            // Default is false
+            annoView.animatesDrop = true
+            
+            // No Delay
+            return annoView
         }
         
         return nil
@@ -116,7 +137,7 @@ class TrailDetailVC: AZSDetailVC, GeoSearch, UITableViewDelegate, UITableViewDat
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
-        return 1
+        return 2
     
     }
     
@@ -124,8 +145,14 @@ class TrailDetailVC: AZSDetailVC, GeoSearch, UITableViewDelegate, UITableViewDat
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         
-        cell.textLabel?.text = "County: \(self.trail!.county)"
-        cell.detailTextLabel?.text = "Elevation: \(self.trail!.elevation) m"
+        if (indexPath.row == 0) {
+            cell.textLabel?.text = "\(self.trail!.name)"
+            cell.detailTextLabel?.text = ""
+            
+        } else {
+            cell.textLabel?.text = "County: \(self.trail!.county)"
+            cell.detailTextLabel?.text = "Elevation: \(self.trail!.elevation) m"
+        }
     
         return cell
     

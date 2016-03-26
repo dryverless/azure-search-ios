@@ -8,8 +8,11 @@
 
 import Foundation
 import UIKit
+import PeekPop
 
-class TrailTableVC: AZSTableVC {
+class TrailTableVC: AZSTableVC, PeekPopPreviewingDelegate {
+    
+    var peekPop: PeekPop?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +20,22 @@ class TrailTableVC: AZSTableVC {
         // Register Custom Cell
         let nib = UINib(nibName: "TrailCell", bundle: nil)
         tableView.registerNib(nib, forCellReuseIdentifier: "TrailCell")
+        
+        peekPop = PeekPop(viewController: self)
+        peekPop?.registerForPreviewingWithDelegate(self, sourceView: tableView)
+        
+        self.refreshControl?.addTarget(self, action: #selector(handleRefresh), forControlEvents: UIControlEvents.ValueChanged)
+        
+    }
+    
+    func handleRefresh(refreshControl: UIRefreshControl) {
+        
+        // Do reloading of data and update tableView appearance.
+        
+        // Use this for fetching more objects.
+        
+        tableView.reloadData()
+        refreshControl.endRefreshing()
         
     }
     
@@ -26,11 +45,11 @@ class TrailTableVC: AZSTableVC {
         
         var cellTrail: Trail!
 
-        let selectedTrail = searchResults!.results["value"]![indexPath.row]! as? [String : AnyObject]
+        let selectedTrail = self.searchResults!.value[indexPath.row]
         
         do {
             
-            cellTrail = try Trail(trail: selectedTrail!)
+            cellTrail = try Trail(trail: selectedTrail)
         
         } catch {
             
@@ -46,7 +65,7 @@ class TrailTableVC: AZSTableVC {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        let cellTrail: [String : AnyObject] = searchResults!.results["value"]![indexPath.row] as! [String : AnyObject]
+        let cellTrail = self.searchResults!.value[indexPath.row]
 
         
         self.performSegueWithIdentifier("TrailDetailVC", sender: cellTrail)
@@ -69,8 +88,8 @@ class TrailTableVC: AZSTableVC {
                         
                     } catch {
                         
+                        print(error)
                         return
-                        //print(error)
                         
                     }
     
@@ -84,7 +103,7 @@ class TrailTableVC: AZSTableVC {
     
     // MARK: Override 3D Touch DetailVC
     
-    override func previewingContext(previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+    func previewingContext(previewingContext: PreviewingContext, viewControllerForLocation location: CGPoint) -> UIViewController? {
         
         // Obtain the index path and the cell that was pressed.
         
@@ -96,7 +115,7 @@ class TrailTableVC: AZSTableVC {
         
         guard let TrailDetailVC = storyboard?.instantiateViewControllerWithIdentifier("TrailDetailVC") as? TrailDetailVC else { return nil }
         
-        let cellTrail: [String : AnyObject] = searchResults!.results["value"]![indexPath.row] as! [String : AnyObject]
+        let cellTrail = self.searchResults!.value[indexPath.row]
         
         
         // Pass previewDetail to TrailDetailVC here
@@ -111,7 +130,6 @@ class TrailTableVC: AZSTableVC {
             
         }
         
-        
         TrailDetailVC.preferredContentSize = CGSize(width: 0.0, height: 0.0) // Default height and width
         
         // Set the source rect to the cell frame, so surrounding elements are blurred.
@@ -119,6 +137,16 @@ class TrailTableVC: AZSTableVC {
         previewingContext.sourceRect = cell.frame
         
         return TrailDetailVC
+        
+    }
+    
+    /// Present the view controller for the "Pop" action.
+    
+    func previewingContext(previewingContext: PreviewingContext, commitViewController viewControllerToCommit: UIViewController) {
+        
+        // Reuse the "Peek" view controller for presentation.
+        
+        showViewController(viewControllerToCommit, sender: self)
         
     }
     

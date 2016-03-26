@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Alamofire
 
 struct AZSClient {
     
@@ -81,6 +82,23 @@ struct AZSClient {
     
     func addToIndex() {
         
+        let _searchUrl = "\(BASE_URL)"
+        
+        let url = NSURL(string: _searchUrl)!
+        
+        Alamofire.request(.PUT, url, headers: SEARCH_HEADERS).responseJSON { response in
+            
+            let result = response.result
+            
+            if let results = result.value as? [String : AnyObject] {
+                
+                print(results.debugDescription)
+                
+                
+            }
+            
+        }
+        
     }
     
     
@@ -95,6 +113,22 @@ struct AZSClient {
     
     func deleteIndex() {
         
+        let _searchUrl = "\(BASE_URL)"
+        
+        let url = NSURL(string: _searchUrl)!
+        
+        Alamofire.request(.GET, url, headers: SEARCH_HEADERS).responseJSON { response in
+            
+            let result = response.result
+            
+            if let results = result.value as? [String : AnyObject] {
+                
+                print(results.debugDescription)
+                
+                
+            }
+            
+        }
         
     }
     
@@ -132,6 +166,22 @@ struct AZSClient {
     
     func createIndex() {
         
+        let _searchUrl = "\(BASE_URL)"
+        
+        let url = NSURL(string: _searchUrl)!
+        
+        Alamofire.request(.GET, url, headers: SEARCH_HEADERS).responseJSON { response in
+            
+            let result = response.result
+            
+            if let results = result.value as? [String : AnyObject] {
+                
+                print(results.debugDescription)
+                
+                
+            }
+            
+        }
         
     }
     

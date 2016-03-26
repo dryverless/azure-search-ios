@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import PeekPop
 
 /*
 
@@ -63,4 +64,13 @@ public extension UISearchController {
         
     }
     
+}
+
+public extension UITableViewController {
+    
+    override func prefersStatusBarHidden() -> Bool {
+        
+        return true
+        
+    }
 }
