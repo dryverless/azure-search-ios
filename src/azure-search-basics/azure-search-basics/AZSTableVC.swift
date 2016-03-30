@@ -8,8 +8,11 @@
 
 import UIKit
 import Alamofire
+//import PeekPop
 
 class AZSTableVC: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate {
+    
+    //var peekPop: PeekPop?
     
     var searchResults: AZSResults?
     var suggestedSearchResults = [AnyObject]() // AZSSuggestions()
@@ -29,37 +32,40 @@ class AZSTableVC: UITableViewController, UISearchResultsUpdating, UISearchBarDel
         performSearch(searchQuery)
         
         
+        //peekPop = PeekPop(viewController: self)
+        //peekPop?.registerForPreviewingWithDelegate(self, sourceView: view)
+        
         // Check for force touch feature, and add force touch/previewing capability.
         
-        if traitCollection.forceTouchCapability == .Available {
-            
-            /*
-            
-            Register for `UIViewControllerPreviewingDelegate` to enable
-            
-            "Peek" and "Pop".
-            
-            (see: AZSResultsVCPreviewing.swift)
-            
-
-            
-            The view controller will be automatically unregistered when it is
-            
-            deallocated.
-            
-            */
-            
-            registerForPreviewingWithDelegate(self, sourceView: view)
-            
-        }
-            
-        else {
-            
-            // Create an alert to display to the user.
-            
-            alertController = UIAlertController(title: "3D Touch Not Available", message: "Unsupported device.", preferredStyle: .Alert)
-            
-        }
+//        if traitCollection.forceTouchCapability == .Available {
+//            
+//            /*
+//            
+//            Register for `UIViewControllerPreviewingDelegate` to enable
+//            
+//            "Peek" and "Pop".
+//            
+//            (see: AZSResultsVCPreviewing.swift)
+//            
+//
+//            
+//            The view controller will be automatically unregistered when it is
+//            
+//            deallocated.
+//            
+//            */
+//            
+//            registerForPreviewingWithDelegate(self, sourceView: view)
+//            
+//        }
+//            
+//        else {
+//            
+//            // Create an alert to display to the user.
+//            
+//            alertController = UIAlertController(title: "3D Touch Not Available", message: "Unsupported device.", preferredStyle: .Alert)
+//            
+//        }
         
         self.loadSearchController()
         
@@ -381,22 +387,22 @@ class AZSTableVC: UITableViewController, UISearchResultsUpdating, UISearchBarDel
 
     // MARK: - Navigation
 
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        
-//        if segue.identifier == "AZSDetailVC" {
-//            
-//            if let detailVC = segue.destinationViewController as? AZSDetailVC {
-//                
-//                if let azsresult = sender as? AZSResult {
-//                    
-//                    detailVC.result = azsresult
-//                    
-//                }
-//                
-//            }
-//            
-//        }
-//        
-//    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "AZSDetailVC" {
+            
+            if let detailVC = segue.destinationViewController as? AZSDetailVC {
+                
+                if let azsresult = sender as? AZSResult {
+                    
+                    detailVC.result = azsresult as? AnyObject
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
 
 }

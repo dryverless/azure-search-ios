@@ -105,18 +105,49 @@ class AZSGeoResultVC: AZSViewController, GeoSearch, UITableViewDelegate, UITable
             
             return annoView
         
-        } else if annotation.isKindOfClass(MKUserLocation) {
-            
-            return nil
         }
         
         return nil
         
     }
     
+//    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+//        
+//        if annotation.isKindOfClass(AZSMapAnnotation) {
+//            
+//            let annoView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "Default")
+//            
+//            // Default is redColor()
+//            annoView.pinTintColor = UIColor.blueColor()
+//            
+//            // Default is false
+//            annoView.animatesDrop = true
+//            
+//            // No Delay
+//            return annoView
+//            
+//        } else if annotation.isKindOfClass(MKUserLocation) {
+//            
+//            let annoView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "Default")
+//            
+//            // Default is redColor()
+//            annoView.pinTintColor = UIColor.redColor()
+//            
+//            // Default is false
+//            annoView.animatesDrop = true
+//            
+//            // No Delay
+//            return annoView
+//        }
+//        
+//        return nil
+//        
+//    }
+    
     func createAnnotationFromAddress(location: CLLocation) {
         
         let annotation = AZSMapAnnotation(coordinate: location.coordinate)
+        
         map.addAnnotation(annotation)
         
     }
@@ -154,10 +185,6 @@ class AZSGeoResultVC: AZSViewController, GeoSearch, UITableViewDelegate, UITable
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         return UITableViewCell()
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
     }
 
 }

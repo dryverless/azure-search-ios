@@ -22,31 +22,31 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "azure_search_basics.HomeGeoSearchVC.init (azure_search_basics.HomeGeoSearchVC.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; azure_search_basics.HomeGeoSearchVC"
+                  symbolName = "azure_search_basics.HomeGeoSearchVC.__deallocating_deinit"
                   moduleName = "azure-search-basics"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Mark/Desktop/Udemy/SwiftCourse/azure-search-basics/azure-search-basics/HomeGeoSearchVC.swift"
-                  timestampString = "480276952.052637"
+                  timestampString = "480666776.424907"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "57">
+                  offsetFromSymbolStart = "20">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "azure_search_basics.HomeGeoSearchVC.init (azure_search_basics.HomeGeoSearchVC.Type)(coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;azure_search_basics.HomeGeoSearchVC&gt;"
+                  symbolName = "azure_search_basics.HomeGeoSearchVC.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; azure_search_basics.HomeGeoSearchVC"
                   moduleName = "azure-search-basics"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Mark/Desktop/Udemy/SwiftCourse/azure-search-basics/azure-search-basics/HomeGeoSearchVC.swift"
-                  timestampString = "480276952.052852"
+                  timestampString = "480666776.425106"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "128">
                </Location>
             </Locations>
          </BreakpointContent>

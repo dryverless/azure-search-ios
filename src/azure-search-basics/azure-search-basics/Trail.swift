@@ -36,10 +36,10 @@ struct Trail: AZSResult {
     
     internal var _searchScore: Double
     internal var _id: String
-    private var _name: String?
-    private var _location: AZSLocation?
+    private var _name: String!
+    private var _location: AZSLocation!
     private var _county: String!
-    private var _elevation: Int!
+    private var _elevation: AnyObject!
     
     var name: String {
         
@@ -83,11 +83,11 @@ struct Trail: AZSResult {
         
     }
     
-    var elevation: Int {
+    var elevation: AnyObject {
         
         get {
             
-            if let elev: Int = _elevation ?? 0 {
+            if let elev: AnyObject = _elevation ?? 0 {
                 
                 return elev
                 
@@ -128,10 +128,18 @@ struct Trail: AZSResult {
             
         }
         
+        // Returns Int64
+        guard let elev: AnyObject = trail["elevation"] else {
+            
+            throw InitializationError.MissingElevation
+            
+        }
+        
         self._searchScore = score ?? 1
         self._id = tId ?? ""
         self._name = tName ?? ""
         self._county = tCounty ?? ""
+        self._elevation = elev ?? 0
         do {
             
             self._location = try AZSLocation(location: tLoc)
@@ -144,9 +152,10 @@ struct Trail: AZSResult {
             
         }
         
+        
     }
     
-    init(score: Double, id: String, name: String, county: String, elevation: Int, location: [Double]) {
+    init(score: Double, id: String, name: String, county: String, elevation: AnyObject, location: [Double]) {
         
         self._searchScore = score
         self._id = id

@@ -85,14 +85,14 @@ struct CRS {
     }
     
     init(name: String) {
-    
-        self._properties.updateValue(name, forKey: "name")
+        
+        self._properties = [ "name" : name ]
         
     }
     
     init() {
 
-        self._properties.updateValue("EPSG:4326", forKey: "name")
+        self._properties = [ "name" : "EPSG:4326" ]
         
     }
     
