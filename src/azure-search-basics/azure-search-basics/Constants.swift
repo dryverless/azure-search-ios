@@ -66,11 +66,11 @@ public extension UISearchController {
     
 }
 
-public extension UITableViewController {
-    
-    override func prefersStatusBarHidden() -> Bool {
-        
-        return true
-        
-    }
-}
+//public extension UITableViewController {
+//    
+//    override func prefersStatusBarHidden() -> Bool {
+//        
+//        return true
+//        
+//    }
+//}

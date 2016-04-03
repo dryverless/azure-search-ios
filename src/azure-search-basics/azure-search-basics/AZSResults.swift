@@ -61,7 +61,7 @@ struct AZSResults {
         
         get {
          
-            if let ctx: String = results["@odata.context"] as? String ?? "" {
+            if let ctx: String = results["@odata.context"] as? String {
                 
                 return ctx
                 
@@ -92,7 +92,7 @@ struct AZSResults {
        
         get {
             
-            if let nLink: String = results["@odata.nextLink"] as? String ?? "" {
+            if let nLink: String = results["@odata.nextLink"] as? String {
                 
                 return nLink
             }
@@ -112,7 +112,11 @@ struct AZSResults {
         if let Results: [String : AnyObject] = results {
             
             self._results = Results
-            
+//            for result in Results["value"] {
+//                
+//                // set as AZSResult Conforming Type
+//                
+//            }
         }
         
         
