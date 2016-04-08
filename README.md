@@ -6,7 +6,7 @@
 
 </h1>
 
-Modular SDK written in Swift 2.2 / Xcode 7.3 that simplifies incorporating Azure Search into native iOS 9 applications for iPhones and iPads (later will be inclusive of tvOS and watchOS). Requires Whole Module Optimization to be enabled for best performance. **Non-commercial use only.**
+Modular SDK written in Swift 2.2 / Xcode 7.3 that simplifies incorporating Azure Search into native iOS 9 applications for iPhones and iPads (later will be inclusive of tvOS and watchOS). Requires Whole Module Optimization to be enabled for best performance. **Non-commercial use only. Commercial licensing terms will be made available upon first release.**
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/TheDarkCode/azure-search-ios/master/img/TrailSearch.png" alt="AngularAzureSearch" height="auto" width="60%">
