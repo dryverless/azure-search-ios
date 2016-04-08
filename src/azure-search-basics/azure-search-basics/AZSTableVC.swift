@@ -242,20 +242,22 @@ class AZSTableVC: UITableViewController, UISearchResultsUpdating, UISearchBarDel
         
         let _searchEncoded: String = searchText.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet()) ?? ""
         
-        let _searchUrl: String = "\(BASE_URL)\(_searchEncoded)&fuzzy=true"
+        let searchString: String = "\(_searchEncoded)&fuzzy=true"
         
-        let url = NSURL(string: _searchUrl)!
-        
-        Alamofire.request(.GET, url, headers: SEARCH_HEADERS).responseJSON { response in
+        AZS.sharedClient.performBasicSearch(.Demo, service: .Demo, index: .Demo, searchText: searchString) {
             
-            let result = response.result
+            (let response) in
             
-            if let results = result.value as? [String : AnyObject] {
+            if let results: [String : AnyObject] = response {
                 
-                print(results.debugDescription)
-                
-                self.searchResults = AZSResults(results: results)
-                self.animateTableViewCells()
+                self.delay(0) {
+                    
+                    print(results.debugDescription)
+                    
+                    self.searchResults = AZSResults(results: results)
+                    self.animateTableViewCells()
+                    
+                }
                 
             }
             

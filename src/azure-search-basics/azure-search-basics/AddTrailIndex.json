@@ -1,0 +1,18 @@
+{
+    "name": "trails",
+    
+    "fields": [
+               
+               {"name": "id", "type": "Edm.String", "key": true, "searchable": false},
+               
+               {"name": "name", "type": "Edm.String"},
+               
+               {"name": "county", "type": "Edm.String"},
+               
+               {"name": "elevation", "type": "Edm.Int32"},
+               
+               {"name": "location", "type": "Edm.GeographyPoint"}
+               
+    ]
+    
+}

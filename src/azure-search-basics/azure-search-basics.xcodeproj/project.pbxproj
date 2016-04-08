@@ -66,6 +66,8 @@
 		4DB6B0191C917AB400278E09 /* Trail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB6B0181C917AB400278E09 /* Trail.swift */; };
 		4DB6B0431C91810900278E09 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB6B0421C91810900278E09 /* Constants.swift */; };
 		4DC957181C9FEF3300CCAD33 /* AZSGeoSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC957171C9FEF3300CCAD33 /* AZSGeoSearchVC.swift */; };
+		4DF37D5B1CB797BC00A5948C /* AddTrailIndex.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DF37D5A1CB797BC00A5948C /* AddTrailIndex.json */; };
+		4DF37D5E1CB7C18600A5948C /* NSURLSessionUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF37D5D1CB7C18600A5948C /* NSURLSessionUtils.swift */; };
 		4DFEB8181C92BBF4005C76B9 /* AZSTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEB8171C92BBF4005C76B9 /* AZSTableVC.swift */; };
 		4DFEB81A1C92BCD3005C76B9 /* AZSGeoResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEB8191C92BCD3005C76B9 /* AZSGeoResultVC.swift */; };
 		4DFEB8221C92BE99005C76B9 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DFEB8211C92BE99005C76B9 /* Search.storyboard */; };
@@ -161,6 +163,8 @@
 		4DB6B0181C917AB400278E09 /* Trail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trail.swift; sourceTree = "<group>"; };
 		4DB6B0421C91810900278E09 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4DC957171C9FEF3300CCAD33 /* AZSGeoSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZSGeoSearchVC.swift; sourceTree = "<group>"; };
+		4DF37D5A1CB797BC00A5948C /* AddTrailIndex.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AddTrailIndex.json; sourceTree = "<group>"; };
+		4DF37D5D1CB7C18600A5948C /* NSURLSessionUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLSessionUtils.swift; sourceTree = "<group>"; };
 		4DFEB8171C92BBF4005C76B9 /* AZSTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZSTableVC.swift; sourceTree = "<group>"; };
 		4DFEB8191C92BCD3005C76B9 /* AZSGeoResultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZSGeoResultVC.swift; sourceTree = "<group>"; };
 		4DFEB8211C92BE99005C76B9 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
@@ -244,7 +248,6 @@
 		4D8ABCE61C960377006E1D35 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				4D0297451CA01CD400C82E90 /* AddTrails.json */,
 				4D8ABCE71C960388006E1D35 /* AZSClient.swift */,
 			);
 			name = Manager;
@@ -273,6 +276,7 @@
 		4D9AB7DD1C992BDE0057FFC3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				4DF37D5D1CB7C18600A5948C /* NSURLSessionUtils.swift */,
 				4D9AB7DE1C992C1C0057FFC3 /* DispatchQueue.swift */,
 			);
 			name = Utils;
@@ -306,7 +310,7 @@
 				4D9AB7C51C97166A0057FFC3 /* Models */,
 				4DB6B03F1C9180CE00278E09 /* Views */,
 				4DB6B0401C9180DA00278E09 /* Controllers */,
-				4DB6B00E1C91727800278E09 /* Azure Search */,
+				4DB6B00E1C91727800278E09 /* Azure Search SDK */,
 				4DB6AFDD1C91726F00278E09 /* AppDelegate.swift */,
 				4DB6AFE71C91726F00278E09 /* Assets.xcassets */,
 				4DB6AFEC1C91726F00278E09 /* Info.plist */,
@@ -333,9 +337,10 @@
 			path = "azure-search-basicsUITests";
 			sourceTree = "<group>";
 		};
-		4DB6B00E1C91727800278E09 /* Azure Search */ = {
+		4DB6B00E1C91727800278E09 /* Azure Search SDK */ = {
 			isa = PBXGroup;
 			children = (
+				4DF37D5C1CB7BCAA00A5948C /* Data */,
 				4D5C42061CAD2A9300B5305A /* Extensions */,
 				4D9AB7DD1C992BDE0057FFC3 /* Utils */,
 				4DFEB8231C92BEE8005C76B9 /* Config */,
@@ -345,7 +350,7 @@
 				4DFEB81B1C92BD03005C76B9 /* Views */,
 				4DFEB81C1C92BD09005C76B9 /* Controllers */,
 			);
-			name = "Azure Search";
+			name = "Azure Search SDK";
 			sourceTree = "<group>";
 		};
 		4DB6B03E1C9180C300278E09 /* Models */ = {
@@ -394,6 +399,15 @@
 				4D9AB7D91C9739280057FFC3 /* HomeDetailVC.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		4DF37D5C1CB7BCAA00A5948C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4D0297451CA01CD400C82E90 /* AddTrails.json */,
+				4DF37D5A1CB797BC00A5948C /* AddTrailIndex.json */,
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 		4DFEB81B1C92BD03005C76B9 /* Views */ = {
@@ -545,6 +559,7 @@
 				4DB6AFEB1C91726F00278E09 /* LaunchScreen.storyboard in Resources */,
 				4DB6AFE81C91726F00278E09 /* Assets.xcassets in Resources */,
 				4D0BBA1E1C9BF0E900E23544 /* AZSSuggestionCell.xib in Resources */,
+				4DF37D5B1CB797BC00A5948C /* AddTrailIndex.json in Resources */,
 				4DFEB82B1C92C3EC005C76B9 /* AZSResultCell.xib in Resources */,
 				4DB6AFE31C91726F00278E09 /* Main.storyboard in Resources */,
 				4D0297461CA01CD400C82E90 /* AddTrails.json in Resources */,
@@ -661,6 +676,7 @@
 				4D5C42051CAD2A5B00B5305A /* LevenshteinExtensions.swift in Sources */,
 				4DB6B0131C91731A00278E09 /* AZSResult.swift in Sources */,
 				4D0297571CA0558F00C82E90 /* FreshnessScoringFunc.swift in Sources */,
+				4DF37D5E1CB7C18600A5948C /* NSURLSessionUtils.swift in Sources */,
 				4D4D70031C96B7F70007FC01 /* Movie.swift in Sources */,
 				4DB6AFDE1C91726F00278E09 /* AppDelegate.swift in Sources */,
 				4D02975D1CA05B2B00C82E90 /* DistanceScoringFunc.swift in Sources */,
