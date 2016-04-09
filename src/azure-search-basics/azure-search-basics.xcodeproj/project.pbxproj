@@ -21,6 +21,8 @@
 		4D02975F1CA05B7600C82E90 /* TagScoringFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D02975E1CA05B7600C82E90 /* TagScoringFunc.swift */; };
 		4D0A79A91CA65993001DDE30 /* AzureSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0A79A81CA65993001DDE30 /* AzureSearchVC.swift */; };
 		4D0A79AB1CA65D18001DDE30 /* IBInspectableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0A79AA1CA65D18001DDE30 /* IBInspectableExtensions.swift */; };
+		4D0A79AD1CA66875001DDE30 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0A79AC1CA66875001DDE30 /* UITableViewExtensions.swift */; };
+		4D0A79AF1CA68D58001DDE30 /* BinarySearchExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0A79AE1CA68D58001DDE30 /* BinarySearchExtensions.swift */; };
 		4D0BBA161C9BF06600E23544 /* TrailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D0BBA151C9BF06600E23544 /* TrailCell.xib */; };
 		4D0BBA181C9BF07700E23544 /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D0BBA171C9BF07700E23544 /* MovieCell.xib */; };
 		4D0BBA1A1C9BF0A700E23544 /* TrailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0BBA191C9BF0A700E23544 /* TrailCell.swift */; };
@@ -31,8 +33,11 @@
 		4D4BE9391C9A86C6002CBF78 /* AZSFacet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4BE9381C9A86C6002CBF78 /* AZSFacet.swift */; };
 		4D4D70031C96B7F70007FC01 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D70021C96B7F70007FC01 /* Movie.swift */; };
 		4D4D70051C96BC840007FC01 /* AZSSuggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D70041C96BC840007FC01 /* AZSSuggestion.swift */; };
-		4D533C0A1CA297F90013AFED /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D533C091CA297F90013AFED /* Extensions.swift */; };
+		4D533C0A1CA297F90013AFED /* GlobalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D533C091CA297F90013AFED /* GlobalExtensions.swift */; };
 		4D533C0C1CA2C82B0013AFED /* AZSViewManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D533C0B1CA2C82B0013AFED /* AZSViewManagerVC.swift */; };
+		4D5C42051CAD2A5B00B5305A /* LevenshteinExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5C42041CAD2A5B00B5305A /* LevenshteinExtensions.swift */; };
+		4D5C42081CAD2AE500B5305A /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5C42071CAD2AE500B5305A /* StringExtensions.swift */; };
+		4D5C420A1CAD41A300B5305A /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5C42091CAD41A300B5305A /* Array2D.swift */; };
 		4D8ABCE81C960388006E1D35 /* AZSClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8ABCE71C960388006E1D35 /* AZSClient.swift */; };
 		4D9AB7C71C972D3D0057FFC3 /* AZSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9AB7C61C972D3D0057FFC3 /* AZSViewController.swift */; };
 		4D9AB7C91C972D760057FFC3 /* AZSCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9AB7C81C972D760057FFC3 /* AZSCollectionVC.swift */; };
@@ -61,6 +66,8 @@
 		4DB6B0191C917AB400278E09 /* Trail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB6B0181C917AB400278E09 /* Trail.swift */; };
 		4DB6B0431C91810900278E09 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB6B0421C91810900278E09 /* Constants.swift */; };
 		4DC957181C9FEF3300CCAD33 /* AZSGeoSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC957171C9FEF3300CCAD33 /* AZSGeoSearchVC.swift */; };
+		4DF37D5B1CB797BC00A5948C /* AddTrailIndex.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DF37D5A1CB797BC00A5948C /* AddTrailIndex.json */; };
+		4DF37D5E1CB7C18600A5948C /* NSURLSessionUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF37D5D1CB7C18600A5948C /* NSURLSessionUtils.swift */; };
 		4DFEB8181C92BBF4005C76B9 /* AZSTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEB8171C92BBF4005C76B9 /* AZSTableVC.swift */; };
 		4DFEB81A1C92BCD3005C76B9 /* AZSGeoResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEB8191C92BCD3005C76B9 /* AZSGeoResultVC.swift */; };
 		4DFEB8221C92BE99005C76B9 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DFEB8211C92BE99005C76B9 /* Search.storyboard */; };
@@ -105,6 +112,8 @@
 		4D02975E1CA05B7600C82E90 /* TagScoringFunc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagScoringFunc.swift; sourceTree = "<group>"; };
 		4D0A79A81CA65993001DDE30 /* AzureSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AzureSearchVC.swift; sourceTree = "<group>"; };
 		4D0A79AA1CA65D18001DDE30 /* IBInspectableExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBInspectableExtensions.swift; sourceTree = "<group>"; };
+		4D0A79AC1CA66875001DDE30 /* UITableViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
+		4D0A79AE1CA68D58001DDE30 /* BinarySearchExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinarySearchExtensions.swift; sourceTree = "<group>"; };
 		4D0BBA151C9BF06600E23544 /* TrailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrailCell.xib; sourceTree = "<group>"; };
 		4D0BBA171C9BF07700E23544 /* MovieCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
 		4D0BBA191C9BF0A700E23544 /* TrailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrailCell.swift; sourceTree = "<group>"; };
@@ -115,8 +124,11 @@
 		4D4BE9381C9A86C6002CBF78 /* AZSFacet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZSFacet.swift; sourceTree = "<group>"; };
 		4D4D70021C96B7F70007FC01 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		4D4D70041C96BC840007FC01 /* AZSSuggestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZSSuggestion.swift; sourceTree = "<group>"; };
-		4D533C091CA297F90013AFED /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		4D533C091CA297F90013AFED /* GlobalExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalExtensions.swift; sourceTree = "<group>"; };
 		4D533C0B1CA2C82B0013AFED /* AZSViewManagerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZSViewManagerVC.swift; sourceTree = "<group>"; };
+		4D5C42041CAD2A5B00B5305A /* LevenshteinExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevenshteinExtensions.swift; sourceTree = "<group>"; };
+		4D5C42071CAD2AE500B5305A /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		4D5C42091CAD41A300B5305A /* Array2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
 		4D8ABCE71C960388006E1D35 /* AZSClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZSClient.swift; sourceTree = "<group>"; };
 		4D9AB7C61C972D3D0057FFC3 /* AZSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZSViewController.swift; sourceTree = "<group>"; };
 		4D9AB7C81C972D760057FFC3 /* AZSCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZSCollectionVC.swift; sourceTree = "<group>"; };
@@ -151,6 +163,8 @@
 		4DB6B0181C917AB400278E09 /* Trail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trail.swift; sourceTree = "<group>"; };
 		4DB6B0421C91810900278E09 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4DC957171C9FEF3300CCAD33 /* AZSGeoSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZSGeoSearchVC.swift; sourceTree = "<group>"; };
+		4DF37D5A1CB797BC00A5948C /* AddTrailIndex.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AddTrailIndex.json; sourceTree = "<group>"; };
+		4DF37D5D1CB7C18600A5948C /* NSURLSessionUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLSessionUtils.swift; sourceTree = "<group>"; };
 		4DFEB8171C92BBF4005C76B9 /* AZSTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZSTableVC.swift; sourceTree = "<group>"; };
 		4DFEB8191C92BCD3005C76B9 /* AZSGeoResultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZSGeoResultVC.swift; sourceTree = "<group>"; };
 		4DFEB8211C92BE99005C76B9 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
@@ -217,10 +231,23 @@
 			name = ScoringFunctions;
 			sourceTree = "<group>";
 		};
+		4D5C42061CAD2A9300B5305A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4D533C091CA297F90013AFED /* GlobalExtensions.swift */,
+				4D0A79AA1CA65D18001DDE30 /* IBInspectableExtensions.swift */,
+				4D0A79AC1CA66875001DDE30 /* UITableViewExtensions.swift */,
+				4D0A79AE1CA68D58001DDE30 /* BinarySearchExtensions.swift */,
+				4D5C42041CAD2A5B00B5305A /* LevenshteinExtensions.swift */,
+				4D5C42071CAD2AE500B5305A /* StringExtensions.swift */,
+				4D5C42091CAD41A300B5305A /* Array2D.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		4D8ABCE61C960377006E1D35 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				4D0297451CA01CD400C82E90 /* AddTrails.json */,
 				4D8ABCE71C960388006E1D35 /* AZSClient.swift */,
 			);
 			name = Manager;
@@ -249,9 +276,8 @@
 		4D9AB7DD1C992BDE0057FFC3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				4DF37D5D1CB7C18600A5948C /* NSURLSessionUtils.swift */,
 				4D9AB7DE1C992C1C0057FFC3 /* DispatchQueue.swift */,
-				4D533C091CA297F90013AFED /* Extensions.swift */,
-				4D0A79AA1CA65D18001DDE30 /* IBInspectableExtensions.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -284,7 +310,7 @@
 				4D9AB7C51C97166A0057FFC3 /* Models */,
 				4DB6B03F1C9180CE00278E09 /* Views */,
 				4DB6B0401C9180DA00278E09 /* Controllers */,
-				4DB6B00E1C91727800278E09 /* Azure Search */,
+				4DB6B00E1C91727800278E09 /* Azure Search SDK */,
 				4DB6AFDD1C91726F00278E09 /* AppDelegate.swift */,
 				4DB6AFE71C91726F00278E09 /* Assets.xcassets */,
 				4DB6AFEC1C91726F00278E09 /* Info.plist */,
@@ -311,9 +337,11 @@
 			path = "azure-search-basicsUITests";
 			sourceTree = "<group>";
 		};
-		4DB6B00E1C91727800278E09 /* Azure Search */ = {
+		4DB6B00E1C91727800278E09 /* Azure Search SDK */ = {
 			isa = PBXGroup;
 			children = (
+				4DF37D5C1CB7BCAA00A5948C /* Data */,
+				4D5C42061CAD2A9300B5305A /* Extensions */,
 				4D9AB7DD1C992BDE0057FFC3 /* Utils */,
 				4DFEB8231C92BEE8005C76B9 /* Config */,
 				4D9AB7CC1C9738150057FFC3 /* Protocols */,
@@ -322,7 +350,7 @@
 				4DFEB81B1C92BD03005C76B9 /* Views */,
 				4DFEB81C1C92BD09005C76B9 /* Controllers */,
 			);
-			name = "Azure Search";
+			name = "Azure Search SDK";
 			sourceTree = "<group>";
 		};
 		4DB6B03E1C9180C300278E09 /* Models */ = {
@@ -371,6 +399,15 @@
 				4D9AB7D91C9739280057FFC3 /* HomeDetailVC.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		4DF37D5C1CB7BCAA00A5948C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4D0297451CA01CD400C82E90 /* AddTrails.json */,
+				4DF37D5A1CB797BC00A5948C /* AddTrailIndex.json */,
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 		4DFEB81B1C92BD03005C76B9 /* Views */ = {
@@ -522,6 +559,7 @@
 				4DB6AFEB1C91726F00278E09 /* LaunchScreen.storyboard in Resources */,
 				4DB6AFE81C91726F00278E09 /* Assets.xcassets in Resources */,
 				4D0BBA1E1C9BF0E900E23544 /* AZSSuggestionCell.xib in Resources */,
+				4DF37D5B1CB797BC00A5948C /* AddTrailIndex.json in Resources */,
 				4DFEB82B1C92C3EC005C76B9 /* AZSResultCell.xib in Resources */,
 				4DB6AFE31C91726F00278E09 /* Main.storyboard in Resources */,
 				4D0297461CA01CD400C82E90 /* AddTrails.json in Resources */,
@@ -601,6 +639,7 @@
 				4DFEB8251C92BF5B005C76B9 /* AZSTableVCPreviewing.swift in Sources */,
 				4DFEB8181C92BBF4005C76B9 /* AZSTableVC.swift in Sources */,
 				4D533C0C1CA2C82B0013AFED /* AZSViewManagerVC.swift in Sources */,
+				4D0A79AD1CA66875001DDE30 /* UITableViewExtensions.swift in Sources */,
 				4D0297541CA051DC00C82E90 /* AZSScoringFunction.swift in Sources */,
 				4DB6B0171C91759A00278E09 /* CRS.swift in Sources */,
 				4D9AB7C71C972D3D0057FFC3 /* AZSViewController.swift in Sources */,
@@ -614,9 +653,11 @@
 				4D0BBA201C9BF0F600E23544 /* AZSSuggestionCell.swift in Sources */,
 				4D4BE9391C9A86C6002CBF78 /* AZSFacet.swift in Sources */,
 				4D9AB7D21C9738960057FFC3 /* MovieCollectionVC.swift in Sources */,
+				4D5C42081CAD2AE500B5305A /* StringExtensions.swift in Sources */,
 				4D0A79AB1CA65D18001DDE30 /* IBInspectableExtensions.swift in Sources */,
 				4D02974C1CA01FC100C82E90 /* AZSSuggester.swift in Sources */,
 				4D02975F1CA05B7600C82E90 /* TagScoringFunc.swift in Sources */,
+				4D5C420A1CAD41A300B5305A /* Array2D.swift in Sources */,
 				4DFEB81A1C92BCD3005C76B9 /* AZSGeoResultVC.swift in Sources */,
 				4D9AB7CB1C972E150057FFC3 /* AZSSuggestions.swift in Sources */,
 				4D0BBA1C1C9BF0B000E23544 /* MovieCell.swift in Sources */,
@@ -629,10 +670,13 @@
 				4D9AB7CE1C9738200057FFC3 /* GeoSearch.swift in Sources */,
 				4D0BBA221C9BFDF000E23544 /* AZSPageViewController.swift in Sources */,
 				4DC957181C9FEF3300CCAD33 /* AZSGeoSearchVC.swift in Sources */,
+				4D0A79AF1CA68D58001DDE30 /* BinarySearchExtensions.swift in Sources */,
 				4D02975B1CA05AE500C82E90 /* MagnitudeScoringFunc.swift in Sources */,
 				4D9AB7D01C9738840057FFC3 /* TrailTableVC.swift in Sources */,
+				4D5C42051CAD2A5B00B5305A /* LevenshteinExtensions.swift in Sources */,
 				4DB6B0131C91731A00278E09 /* AZSResult.swift in Sources */,
 				4D0297571CA0558F00C82E90 /* FreshnessScoringFunc.swift in Sources */,
+				4DF37D5E1CB7C18600A5948C /* NSURLSessionUtils.swift in Sources */,
 				4D4D70031C96B7F70007FC01 /* Movie.swift in Sources */,
 				4DB6AFDE1C91726F00278E09 /* AppDelegate.swift in Sources */,
 				4D02975D1CA05B2B00C82E90 /* DistanceScoringFunc.swift in Sources */,
@@ -648,7 +692,7 @@
 				4D0A79A91CA65993001DDE30 /* AzureSearchVC.swift in Sources */,
 				4D9AB7DA1C9739280057FFC3 /* HomeDetailVC.swift in Sources */,
 				4D9AB7C91C972D760057FFC3 /* AZSCollectionVC.swift in Sources */,
-				4D533C0A1CA297F90013AFED /* Extensions.swift in Sources */,
+				4D533C0A1CA297F90013AFED /* GlobalExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

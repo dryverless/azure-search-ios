@@ -12,11 +12,13 @@ struct AZSCorsOptions {
     
     enum InitializationError: ErrorType {
         
+        case InvalidOrigins
+        
         case InvalidMaxAge
         
     }
     
-    private var _allowedOrigins: [String] // ["origin1", "origin2",...,"n"] or ["*"] for Allow All
+    private var _allowedOrigins: [String] = ["*"] // ["origin1", "origin2",...,"n"] or ["*"] for Allow All
     private var _maxAgeInSeconds: Int?
     
     var allowedOrigins: [String] {
@@ -42,7 +44,11 @@ struct AZSCorsOptions {
     
     init(allowedOrigins: [String], maxAgeInSeconds: Int?) throws {
         
-        self._allowedOrigins = allowedOrigins
+        guard let allowOrigins: [String] = allowedOrigins where allowOrigins.count > 0 else {
+            
+            throw InitializationError.InvalidOrigins
+            
+        }
         
         guard let maxAge: Int = maxAgeInSeconds where maxAge >= 0 else {
             
@@ -50,6 +56,7 @@ struct AZSCorsOptions {
             
         }
         
+        self._allowedOrigins = allowOrigins ?? ["*"]
         self._maxAgeInSeconds = maxAge
         
     }

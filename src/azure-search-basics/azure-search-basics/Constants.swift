@@ -51,11 +51,6 @@ let RECOMMENDATION_HEADERS = [
 
 ]
 
-// Closure, returns nothing
-public typealias ResultsDownloadComplete = () -> ()
-
-public typealias DetailDownloadComplete = () -> ()
-
 public extension UISearchController {
     
     override func prefersStatusBarHidden() -> Bool {
@@ -66,11 +61,11 @@ public extension UISearchController {
     
 }
 
-public extension UITableViewController {
-    
-    override func prefersStatusBarHidden() -> Bool {
-        
-        return true
-        
-    }
-}
+//public extension UITableViewController {
+//    
+//    override func prefersStatusBarHidden() -> Bool {
+//        
+//        return true
+//        
+//    }
+//}

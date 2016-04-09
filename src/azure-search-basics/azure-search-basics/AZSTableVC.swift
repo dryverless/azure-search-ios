@@ -69,9 +69,9 @@ class AZSTableVC: UITableViewController, UISearchResultsUpdating, UISearchBarDel
         
         self.loadSearchController()
         
-        // Register Custom Cell
-//        let nib = UINib(nibName: "AZSResultCell", bundle: nil)
-//        tableView.registerNib(nib, forCellReuseIdentifier: "AZSResultCell")
+        // Register Suggestion Cell
+        let nib = UINib(nibName: "AZSSuggestionCell", bundle: nil)
+        tableView.registerNib(nib, forCellReuseIdentifier: "AZSSuggestionCell")
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -103,7 +103,6 @@ class AZSTableVC: UITableViewController, UISearchResultsUpdating, UISearchBarDel
             presentViewController(alertController, animated: true, completion: nil)
             
             
-            
             // Clear the `alertController` to ensure it's not presented multiple times.
             
             self.alertController = nil
@@ -117,37 +116,7 @@ class AZSTableVC: UITableViewController, UISearchResultsUpdating, UISearchBarDel
     
     func animateTableViewCells() {
         
-        tableView.reloadData()
-        
-        let cells = tableView.visibleCells
-        
-        let height: CGFloat = tableView.bounds.size.height
-        
-        for initialCell in cells {
-            
-            let cell: UITableViewCell = initialCell
-            
-            cell.transform = CGAffineTransformMakeTranslation(0, height)
-            
-        }
-        
-        var indexOfCell = 0
-        
-        for finalCell in cells {
-            
-            let cell: UITableViewCell = finalCell
-            
-            UIView.animateWithDuration(1.0,
-                delay: 0.05 * Double(indexOfCell),
-                usingSpringWithDamping: 0.75,
-                initialSpringVelocity: 0,
-                options: [],
-                animations: {
-                    cell.transform = CGAffineTransformMakeTranslation(0, 0);
-                }, completion: nil)
-            
-            indexOfCell += 1
-        }
+        tableView.animateData()
         
         if searchQuery == "" {
           
@@ -165,12 +134,6 @@ class AZSTableVC: UITableViewController, UISearchResultsUpdating, UISearchBarDel
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override func prefersStatusBarHidden() -> Bool {
-        
-        return true
-    
     }
     
     // MARK: - Search Controller Configuration
@@ -279,20 +242,22 @@ class AZSTableVC: UITableViewController, UISearchResultsUpdating, UISearchBarDel
         
         let _searchEncoded: String = searchText.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet()) ?? ""
         
-        let _searchUrl: String = "\(BASE_URL)\(_searchEncoded)&fuzzy=true"
+        let searchString: String = "\(_searchEncoded)&fuzzy=true"
         
-        let url = NSURL(string: _searchUrl)!
-        
-        Alamofire.request(.GET, url, headers: SEARCH_HEADERS).responseJSON { response in
+        AZS.sharedClient.performBasicSearch(.Demo, service: .Demo, index: .Demo, searchText: searchString) {
             
-            let result = response.result
+            (let response) in
             
-            if let results = result.value as? [String : AnyObject] {
+            if let results: [String : AnyObject] = response {
                 
-                print(results.debugDescription)
-                
-                self.searchResults = AZSResults(results: results)
-                self.animateTableViewCells()
+                self.delay(0) {
+                    
+                    print(results.debugDescription)
+                    
+                    self.searchResults = AZSResults(results: results)
+                    self.animateTableViewCells()
+                    
+                }
                 
             }
             
@@ -320,20 +285,25 @@ class AZSTableVC: UITableViewController, UISearchResultsUpdating, UISearchBarDel
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-//        if searchController.active {
-//            
-//            return suggestedSearchResults.count
-//            
-//        } else {
-//            
-//            return searchResults.count
-//        }
-        
-        if let resultsCount: Int = searchResults?.results["value"]?.count ?? 0 {
+        if searchController.active {
             
-            return resultsCount
+            // switch to suggested results
+            if let suggestedResultsCount: Int = searchResults?.results["value"]?.count ?? 0 {
+                
+                return suggestedResultsCount
+                
+            }
             
+        } else {
+            
+            if let resultsCount: Int = searchResults?.results["value"]?.count ?? 0 {
+                
+                return resultsCount
+                
+            }
         }
+        
+
     
     }
 
@@ -363,25 +333,25 @@ class AZSTableVC: UITableViewController, UISearchResultsUpdating, UISearchBarDel
         
         //var cellResult = AZSResult()
         
-//        if self.searchController.active {
-//            
-//            // change to suggestions var
-//            if let suggestion = self.searchResults.value[indexPath.row] as? AZSResult {
-//                
-//                print(suggestion)
-//                
-//            }
-//            
-//        } else {
-//            
-//            // Don't need cast here if using AZSResult as object type in array
-//            if let result = self.searchResults.value[indexPath.row] as? AZSResult {
-//                
-//                print(result)
-//                
-//            }
-//            
-//        }
+        if self.searchController.active {
+            
+            // change to suggestions var
+            if let suggestion = self.searchResults!.value[indexPath.row] as? AZSResult {
+                
+                print(suggestion)
+                
+            }
+            
+        } else {
+            
+            // Don't need cast here if using AZSResult as object type in array
+            if let result = self.searchResults!.value[indexPath.row] as? AZSResult {
+                
+                print(result)
+                
+            }
+            
+        }
         
     }
 

@@ -23,20 +23,19 @@ class TrailDetailVC: AZSDetailVC, GeoSearch, UITableViewDelegate, UITableViewDat
         map.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
-        setupTrailMap()
     
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        //setupTrailMap()
+        setupTrailMap()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        setupTrailMap()
+        //setupTrailMap()
     }
     
     func setupTrailMap() {
@@ -46,7 +45,7 @@ class TrailDetailVC: AZSDetailVC, GeoSearch, UITableViewDelegate, UITableViewDat
             let loc = try trail!.location.asCoordinate2D()
             centerMapOnCoordinate2D(loc)
             
-            delay(2) {
+            delay(1) {
                 self.createAnnotationFromTrail()
             }
             
@@ -58,7 +57,7 @@ class TrailDetailVC: AZSDetailVC, GeoSearch, UITableViewDelegate, UITableViewDat
         
         self.title = trail.name
         
-        tableView.reloadData()
+        tableView.animateData()
         
     }
 
@@ -106,6 +105,11 @@ class TrailDetailVC: AZSDetailVC, GeoSearch, UITableViewDelegate, UITableViewDat
             
             // Default is false
             annoView.animatesDrop = true
+            
+            annoView.canShowCallout = true
+            
+            annoView.calloutOffset = CGPoint(x: -5, y: -5)
+            annoView.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure) as? UIView
             
             // No Delay
             return annoView
